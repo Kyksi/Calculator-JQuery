@@ -1,0 +1,151 @@
+/* switch */
+label {
+    width: 90px;
+    height: 30px;
+    display: inline-block;
+    margin-top: 10px;
+    position: relative;
+    border-radius: 14px;
+    background: rgb(138, 138, 138);
+    background: -webkit-linear-gradient(top, rgba(138, 138, 138, 1) 0%, rgba(140, 140, 140, 1) 14%, rgba(159, 159, 159, 1) 72%, rgba(164, 164, 164, 1) 100%);
+    line-height: 30px;
+    font-style: normal;
+    color: #fff;
+    font-weight: bold;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom,
+        color-stop(0.5, transparent),
+        to(rgba(255, 255, 255, 0.3)));
+    cursor: pointer;
+}
+
+label i {
+    position: absolute;
+    top: -4px;
+    right: 60px;
+    width: 36px;
+    height: 36px;
+    display: block;
+    border-radius: 36px;
+    background: rgb(255, 255, 255);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(252, 252, 252, 1) 11%, rgba(228, 228, 228, 1) 50%, rgba(221, 221, 221, 1) 53%, rgba(205, 205, 205, 1) 97%, rgba(191, 191, 191, 1) 100%);
+    -webkit-transition: all 200ms ease;
+}
+
+label:before {
+    content: "off";
+    margin-left: 25px;
+    text-transform: uppercase;
+    -webkit-transition: all 200ms ease;
+}
+
+input[type=checkbox]:checked ~ label:before {
+    content: "on";
+    text-transform: uppercase;
+    margin-left: -10px;
+}
+
+input[type=checkbox]:checked ~ label {
+    background: rgb(141, 173, 51);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(141, 173, 51, 1) 0%, rgba(146, 178, 55, 1) 24%, rgba(157, 187, 64, 1) 55%, rgba(166, 194, 78, 1) 100%);
+}
+
+input[type=checkbox]:checked ~ label i {
+    right: -6px;
+}
+
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+/* Calculator */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(125, 223, 215);
+    background: linear-gradient(90deg, rgba(125, 223, 215, 1) 5%, rgba(82, 219, 63, 1) 100%);
+}
+
+#calculator {
+    width: 325px;
+    margin-top: 70px;
+    padding: 20px 20px 9px;
+    position: relative;
+    border-radius: 3px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.top span.clear {
+    position: absolute;
+    z-index: 6;
+}
+
+.top .display {
+    height: 80px;
+    width: 100%;
+    background: white;
+    border: none;
+    font-size: 27px;
+    font-weight: normal;
+    color: black;
+    text-align: right;
+    margin-bottom: 15px;
+    padding-right: 10px;
+}
+
+.keys,
+.top {
+    overflow: hidden;
+}
+
+.keys input {
+    float: left;
+    border: none;
+    cursor: pointer;
+    font-size: 16;
+    width: 66px;
+    height: 56px;
+    background: rgba(255, 240, 240, 0.75);
+    border-radius: 3px;
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+    margin: 0 7px 11px 0;
+    color: black;
+    line-height: 56px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.keys input:active {
+    font-size: 24px;
+}
+
+.keys input.operator {
+    background: rgba(255, 91, 0, 0.79);
+    margin-right: 0;
+}
+
+.keys input.operator:hover,
+.keys input.eval:hover {
+    background: rgb(255, 91, 0);
+    font-weight: bold;
+}
+
+.keys input:hover {
+    background: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.keys input.eval {
+    background: rgba(255, 91, 0, 0.79);
+    line-height: 20px;
+    width: 285px;
+    height: 30px;
+}
+
+footer {
+    position: fixed;
+    right: 10px;
+    bottom: -5px;
+    font-family: Arial Black;
+}
